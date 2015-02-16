@@ -1,8 +1,8 @@
 class PageController < ApplicationController
 
   def index
-    @recommended ||= Product.last(4)
-    @current_day = DateTime.now.wday
+    # @recommended ||= Product.last(4)
+    # @current_day = DateTime.now.wday
   end
   def golovna
 

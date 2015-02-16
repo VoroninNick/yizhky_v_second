@@ -59,7 +59,7 @@ gem 'foundation-rails'
 gem 'owlcarousel-rails'
 gem 'jquery-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
-gem 'mixitup_rails'
+# gem 'mixitup_rails'
 
 gem 'squeel'
 

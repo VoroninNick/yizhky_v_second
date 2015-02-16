@@ -17,7 +17,6 @@
 //= require jquery.inview.min.js
 //= require ckeditor/init
 //= require owl.carousel
-//= require mixitup
 //= require_tree .
 
 

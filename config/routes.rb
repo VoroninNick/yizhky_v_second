@@ -94,11 +94,11 @@ Rails.application.routes.draw do
   get '/restoran/:restoran_id/:id', to: 'page#catalogs_item', as: 'products_by_category'
 
   # Orders END
-  get '/golovna' => 'page#golovna'
+  # get '/golovna' => 'page#golovna'
   # get '/restaurant/:url'
   get '/:url' => 'page#about', as: 'restaurant_about'
   get '/:restaurant/all-menu' => 'page#catalog', as: 'restaurant_all_menu'
   get '/:restaurant/:catalog' => 'page#catalog', as: 'restaurant_catalog'
 
-  root 'page#index'
+  root 'page#golovna'
 end
