@@ -1,0 +1,103 @@
+
+MyTabs = ($this, container, tabHeader, tabBody) ->
+  current_position = $this.index()
+  $tabs_container = $this.closest(container)
+  $head_tabs_li = $tabs_container.find(tabHeader)
+  $body_tabs_li = $tabs_container.find(tabBody)
+
+  $head_tabs_li.removeClass('active')
+  $this.addClass(' active')
+  $body_tabs_li.removeClass('active')
+  $body_tabs_li.eq(current_position).addClass(' active')
+  #  $head_tabs_li.children().removeClass('active')
+  #  $this.children().first().addClass('active')
+#  $body_tabs_li.removeClass('active').addClass('hide')
+#  $body_tabs_li.eq(current_position).addClass('active').removeClass('hide')
+
+$(document).ready ->
+  $('.mixit-container').mixItUp()
+
+  owl_banner = $("ul#index-products-banner")
+  owl_banner.owlCarousel2
+    margin:20,
+    loop:true,
+    nav:true,
+    items:1,
+    stagePadding: 300,
+    responsive:
+      0: items: 1
+      600:
+        items: 1,
+        stagePadding: 100
+      1300:
+        items: 1,
+        stagePadding: 400
+      1600:
+        items: 1,
+        stagePadding: 500
+
+
+  owl1 = $("#business_lunch")
+  owl1.owlCarousel
+    loop:false,
+    nav:false,
+    margin:10,
+    items:1
+
+    navigation: false,
+    items: 1 #10 items above 1000px browser width
+    itemsDesktop: [ #5 items between 1000px and 901px
+      1000
+      1
+    ]
+    itemsDesktopSmall: [ # betweem 900px and 601px
+      900
+      1
+    ]
+    itemsTablet: [ #2 items between 600 and 0
+      780
+      1
+    ]
+    itemsMobile: []
+    autoPlay : false
+
+  d = new Date()
+  t = d.getDay()
+  if t > 5
+    t = 1
+  currentDay = t - 1
+  $("#business_lunch").trigger 'owl.jumpTo', currentDay
+
+#  init good peaple say tabs
+  $('.gps-header').click ->
+    MyTabs $(this), '.good-people-say-wrap', '.gps-header', '.gps-tab'
+
+# click event to scroll to top
+  $(".scrollToTop").click ->
+    $("html, body").animate
+      scrollTop: 0
+    , 800
+    false
+
+  $("a.fancy_form").fancybox
+    padding: 0
+    width: '100%'
+    closeBtn : false
+    prevEffect: "none"
+    nextEffect: "none"
+    helpers:
+      title:
+        type: "outside"
+
+      thumbs:
+        width: 75
+        height: 50
+    tpl:
+      wrap: "<div id=\"fancy_form__wrap\" class=\"fancybox-wrap mywrap\" tabIndex=\"-1\"><div class=\"fancybox-skin\"><div class=\"fancybox-outer\"><div class=\"fancybox-inner\"></div><a class=\"close_fancybox_form\" onclick=\"$.fancybox.close()\"></a></div></div></div>"
+
+
+  $("a.close-fancy-form").click (e) ->
+    e.preventDefault()
+    $.fancybox.close()
+
+

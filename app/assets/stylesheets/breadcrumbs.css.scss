@@ -1,0 +1,66 @@
+@import "config";
+@import "grid";
+
+#dashboard{
+  #breadcrumbs{
+    li{
+      color: #ffffff !important;
+    }
+  }
+}
+
+#breadcrumbs{
+  @include set_row;
+  ol{
+    @include set_grid;
+    margin: 0!important;
+    padding: 0;
+    list-style: none;
+    top: -44px;
+    width: 70%;
+    left: 150px;
+    .separator{
+      color: #FF9E15;
+    }
+    li{
+      float: left;
+      @include fira;
+      font-size: 14px;
+      color: $brand-darkblue;
+      font-weight: 500;
+      margin-right: 6px;
+      span{
+        color: #FF9E15;
+      }
+
+      a{
+        @include fira;
+        font-weight: 500;
+        font-size: 14px;
+        color: $brand-darkblue;
+        border-bottom: 1px solid rgba(#ffffff, 0.01);
+      }
+    }
+  }
+}
+
+
+
+.pager-list{
+
+  width: 100%;
+  padding: 20px 0;
+
+
+
+  .pager{
+    margin: 0px 6px;
+    font-family: "Lobster", cursive;
+    color: $brand-orange;
+    font-size: 24px;
+  }
+
+  .current{
+    color: $brand-darkblue;
+  }
+}

@@ -1,0 +1,26 @@
+.offer-of-the-week-wrap.proposition-block-wrap
+  .header
+    .header-inner
+      .title
+        h3 Пропизиція тижня
+  .row
+    - prod = products(4)
+    - if prod && prod.count > 0
+      - prod.each_with_index do |p, i|
+        .columns.large-6.medium-6 class="#{'end' if i == prod.count-1}"
+          .one-product-wrap
+            .bi style="background: url('#{p.avatar.url(:main_big)}')no-repeat center center;"
+            .information-block-wrap
+              .price-wrap.text-center
+                .price
+                  strong = p.price.round
+                  p грн
+              .information-block
+                .name-wrap
+                  h2 =p.name
+                .description-wrap
+                  p =p.description
+                form action=""
+                  .input
+                    input type="number" value="1"
+                  button type="submit" name="order-product" value="true" Замовити

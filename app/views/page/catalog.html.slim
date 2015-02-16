@@ -1,0 +1,110 @@
+.row
+  .columns.large-offset-2
+    ul.breadcrumbs
+      li.has-drop
+        a =@current_restorant.name
+        - if @restaurants && @restaurants.count > 0
+        ul.breadcrumbs-drop
+          - @restaurants.each do |r|
+            li
+              a =r.name
+      li.has-drop
+        a href="#" Все меню
+        - if @categories && @categories.count > 0
+          ul.breadcrumbs-drop
+            - @categories.each do |c|
+              li
+                a =c.name
+
+      /li.current
+      /  a href="#" Cloning
+-restaurant = Restoran.order(created_at: :asc)
+.restaurant-wrap class="#{if restaurant[1].slug == params[:restaurant] then 'brown' else if restaurant[2].slug == params[:restaurant] then 'blue' else if restaurant[0].slug == params[:restaurant] then 'yellow-green' end end }"
+  .row
+    .columns.large-3.medium-3
+      = raw @current_restorant.about
+    .columns.large-3.medium-3
+      a href=restaurant_all_menu_path(restaurant[1].slug)
+        .restaurant-logo class="#{ 'passive' if restaurant[1].slug != params[:restaurant] }"
+          = embedded_svg ("bruno-logo.svg")
+    .columns.large-3.medium-3
+      a href=restaurant_all_menu_path(restaurant[2].slug)
+        .restaurant-logo class="#{ 'passive' if restaurant[2].slug != params[:restaurant] }"
+          = embedded_svg ("baba-frana.svg")
+    .columns.large-3.medium-3
+      a href=restaurant_all_menu_path(restaurant[0].slug)
+        .restaurant-logo class="#{ 'passive' if restaurant[0].slug != params[:restaurant] }"
+          = embedded_svg ("barbaris.svg")
+
+  .row
+    .columns.large-3.medium-3
+      .row
+        .columns
+          ul.catalog-sidebar
+            li
+              a
+                |Все меню &nbsp;
+                sup
+                  |(
+                  span = @products_count
+                  | )
+            -@categories.each do |c|
+              - count = c.products.count
+              li
+                a
+                  = c.name
+                  |&nbsp;
+                  sup
+                    |(
+                    span = count
+                    | )
+      - if @current_restorant
+        .about-contact-info-wrap
+          .row
+            .columns
+              h4
+                a href=restaurant_about_path(@current_restorant.slug)
+                  = @current_restorant.name
+              /= image_tag @current_restorant.avatar.url(:thumb)
+              a href=restaurant_about_path(@current_restorant.slug)
+                = image_tag @current_restorant.main_image
+              p = @current_restorant.short_description
+            .columns
+              .contacts-wrap
+                .row
+                  .columns.large-2
+                    = embedded_svg ("Yizhaku-location.svg")
+                  .columns.large-10
+                    p = @current_restorant.address
+                .row
+                  .columns.large-2
+                    = embedded_svg ("Yizhaku-phone.svg")
+                  .columns.large-10
+                    p
+                      a = @current_restorant.phone_number
+          .row
+            .columns
+              a.link-about-restaurant.right href=restaurant_about_path(@current_restorant.slug)
+                |Детальніше
+    .columns.large-9.medium-9
+      .row
+        - if @products && @products.count > 0
+          - @products.each_with_index do |p, i|
+            .columns.large-4.medium-4 class="#{'end' if i == @products.count-1}"
+              .one-product-wrap
+                .bi style="background: url('#{p.avatar.url(:main_big)}')no-repeat center center;"
+                .information-block-wrap
+                  .price-wrap.text-center
+                    .price
+                      strong = p.price.round
+                      p грн
+                  .information-block
+                    .name-wrap
+                      h2 =p.name
+                    .description-wrap
+                      p =p.description
+                    form action=""
+                      .input
+                        input type="number" value="1"
+                      button type="submit" name="order-product" value="true" Замовити
+

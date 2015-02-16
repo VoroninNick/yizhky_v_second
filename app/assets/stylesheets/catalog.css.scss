@@ -1,0 +1,144 @@
+@import "grid";
+@import "config";
+
+#restoran {
+
+  padding-top: $padding-brand-top;
+  padding-bottom: $padding-brand-top;
+
+  #restoran-container {
+    @include set_container;
+    #restoran-row {
+      @include set_row;
+      .restoran-menu {
+        @include set_grid;
+        @include set_grid_3;
+
+        @media (max-width: 720px) {
+          width: 98% !important;
+          height: 61px;
+          margin: 0 1% !important;
+
+          ul {
+            li {
+              display: none;
+            }
+          }
+
+          .current {
+            display: block;
+          }
+        }
+
+        @media (min-width: 720px) and (max-width: 960px) {
+          @include set_grid_4;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          border: 1px solid $brand-barbaris;
+          .current {
+            background: url("Yizhaku-pattern-orange-15%25.jpg") repeat 0 0;
+            sup {
+              color: #ffffff;
+            }
+            color: #ffffff !important;
+          }
+          button {
+            width: 100%;
+            padding: 16px 12px;
+            background: url("pattern-white-15.png") repeat 0 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid $brand-barbaris;
+            font-family: "Lobster", cursive;
+            display: list-item;
+            text-align: left;
+
+            -webkit-appearance: none;
+            cursor: pointer;
+            font-size: 22px;
+            color: $brand-barbaris;
+
+            sup {
+              font-size: 12px;
+              top: -0.95em;
+              span {
+                color: $brand-error;
+              }
+            }
+
+            &:first-child {
+              //background: url("Yizhaku-pattern-orange-15%25.jpg") repeat 0 0;
+            }
+
+            &:last-child {
+              border-bottom: 0 !important;
+            }
+
+            a {
+              font-size: 22px;
+              color: $brand-barbaris;
+
+            }
+          }
+        }
+
+        .restoran-description {
+          h3 {
+            color: $brand-bruno;
+            @include fira;
+            font-weight: 500;
+            font-size: 26px;
+          }
+
+          img {
+            width: 100%;
+            max-width: 100%;
+            margin: 10px 0;
+          }
+
+          p {
+            color: #6D6E71;
+            @include fira;
+            font-size: 18px;
+          }
+
+          .address,
+          .phone {
+            color: $brand-bruno;
+            @include fira;
+          }
+
+        }
+
+      }
+
+      .restoran-products {
+        @include set_grid;
+        @include set_grid_9;
+
+        .pager-list {
+
+        }
+
+        @media (max-width: 720px) {
+          width: 98% !important;
+          margin: 0 1% !important;
+          .product_item {
+            @include set_grid_6;
+            &:nth-child(2n) {
+              margin-right: 0;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+
+

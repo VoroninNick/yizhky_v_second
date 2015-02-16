@@ -1,0 +1,578 @@
+@import "grid";
+@import "config";
+
+#dashboard{
+
+  // Temp
+  padding-top: $padding-brand-top;
+  padding-bottom: $padding-brand-bottom;
+
+  background: url("Yizhaku-pattern-brown-15%25.jpg") repeat 0 0;
+
+  #dashboard-container{
+    @include set_container;
+    #dashboard-row{
+      @include set_row;
+
+      .dashboard-navigation{
+        @include set_grid;
+        @include set_grid_3;
+
+        -webkit-transition: height .65s cubic-bezier(.4,0,.2,1);
+        -moz-transition: height .65s cubic-bezier(.4,0,.2,1);
+        -ms-transition: height .65s cubic-bezier(.4,0,.2,1);
+        -o-transition: height .65s cubic-bezier(.4,0,.2,1);
+        transition: height .65s cubic-bezier(.4,0,.2,1);
+
+        -webkit-transform: scaleY(1);
+        -moz-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+        -o-transform: scaleY(1);
+        transform: scaleY(1);
+
+
+        @media (max-width: 720px) {
+          //display: none;
+          width: 98% !important;
+          height: 61px;
+          margin: 0 1% !important;
+
+          ul{
+            li{
+              display: none;
+            }
+          }
+
+          .current{
+            display: block;
+          }
+
+        }
+
+        @media (min-width: 720px) and (max-width: 960px) {
+          @include set_grid_4;
+        }
+
+
+        ul{
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          .current{
+            background: url("Yizhaku-pattern-orange-15%25.jpg") repeat 0 0;
+            a{
+              color: #ffffff;
+            }
+          }
+          li{
+            padding: 16px 12px;
+            background: url("pattern-white-15.png") repeat 0 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid $brand-orange;
+            &:first-child{
+
+            }
+
+            &:last-child{
+              //border-bottom: 0;
+            }
+
+            a{
+              font-size: 22px;
+              color: $brand-orange;
+              font-family: "Lobster", cursive;
+            }
+          }
+        }
+      }
+
+      .history{
+        h2{
+          font-family: "Lobster", cursive;
+          color: $brand-orange;
+          margin-bottom: 0;
+          margin-top: 0;
+          font-size: 32px;
+        }
+        p{
+          @include fira;
+          color: #6D6E71;
+          margin-bottom: 50px;
+        }
+
+        .history-item{
+          width: 100%;
+          //height: 60px;
+          .history-header{
+            height: 60px;
+            background: url("Yizhaku-pattern-blue-15%25.jpg") repeat 0 0;
+            text-align: center;
+            line-height: 60px;
+            h3{
+              font-family: "Lobster", cursive;
+              color: #ffffff;
+              margin-bottom: 0;
+              margin-top: 0;
+              font-size: 24px;
+            }
+          }
+
+          .history-body{
+            .number-wrapper{
+              @include set_row;
+              margin: 20px 0 60px 0;
+              .number-left{
+                border-bottom: 1px solid $brand-orange;
+                float: left;
+                width: 41%;
+                height: 70px;
+              }
+              .number-center{
+                float: left;
+                margin: 0 2%;
+                width: 15%;
+                color: $brand-orange;
+                text-align: center;
+                font-size: 36px;
+                font-family: "Lobster", cursive;
+                border-radius: 50%;
+                box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
+                height: 140px;
+                line-height: 140px;
+
+              }
+              .number-right{
+                border-bottom: 1px solid $brand-orange;
+                float: left;
+                width: 40%;
+                height: 70px;
+              }
+            }
+            .product-wrapper{
+              @include set_row;
+              .product-item{
+                @include clearfix;
+                margin-bottom: 25px;
+                padding-bottom: 25px;
+                width: 100%;
+                border-bottom: 1px solid #6D6E71;
+                .avatar{
+                  float: left;
+                  width: 15%;
+                  margin-right: 5%;
+                }
+                .descr{
+                  float: left;
+                  width: 80%;
+                  h4{
+                    font-family: "Lobster", cursive;
+                    font-size: 26px;
+                    color: $brand-darkblue;
+                    margin-top: 0;
+                  }
+                }
+              }
+            }
+
+          }
+        }
+
+      }
+
+      .subscribe{
+        h2{
+          font-family: "Lobster", cursive;
+          color: $brand-orange;
+          margin-bottom: 0;
+          margin-top: 0;
+          font-size: 32px;
+        }
+        p{
+          @include fira;
+          color: #6D6E71;
+          margin-bottom: 50px;
+        }
+
+        .left-section{
+          float: left;
+          margin-top: 11px;
+          a{
+            float: left;
+            line-height: 24px;
+            display: inline-block;
+            color: #00948F;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(#00948F, 0.5);
+            margin-left: 12px;
+            margin-top: -2px;
+
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 400;
+
+            &:hover{
+              border-bottom: 1px dotted rgba(#00948F, 1);
+            }
+
+          }
+          svg{
+            float: left;
+            display: inline-block;
+            width: 30px;
+            height: 24px;
+          }
+        }
+
+        .right-section{
+          float: right;
+          a{
+            display: inline-block;
+            color: #00948F;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid;
+            text-transform: uppercase;
+            @include fira;
+            font-weight: 600;
+
+          }
+        }
+
+      }
+
+      #dashboard-user-profile{
+        @include set_grid;
+        @include set_grid_9;
+
+//        -webkit-transition: width .65s cubic-bezier(.55,0,.1,1);
+//        -moz-transition: width .65s cubic-bezier(.55,0,.1,1);
+//        -ms-transition: width .65s cubic-bezier(.55,0,.1,1);
+//        -o-transition: width .65s cubic-bezier(.55,0,.1,1);
+//        transition: width .65s cubic-bezier(.55,0,.1,1);
+
+        @media (max-width: 720px) {
+          width: 98%;
+          margin: 0 1% !important;
+        }
+        @media (min-width: 720px) and (max-width: 960px) {
+          @include set_grid_8;
+        }
+
+        background: #ffffff;
+
+        padding: 40px;
+
+        .intro{
+          padding-bottom: 20px;
+          border-bottom: 1px solid rgba(188, 190, 192, 1);
+          h1{
+            font-family: "Lobster", cursive;
+            color: $brand-darkblue;
+            margin-bottom: 0;
+            margin-top: 0;
+            font-size: 38px;
+          }
+          p{
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 400;
+            color: #6D6E71;
+          }
+          a{
+            color: #00948F;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(#00948F, 0.5);
+            display: inline-block;
+
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 400;
+
+            &:hover{
+              border-bottom: 1px dotted rgba(#00948F, 1);
+            }
+          }
+        }
+
+        .contact-details{
+          padding-bottom: 20px;
+          border-bottom: 1px solid rgba(188, 190, 192, 1);
+
+          ul{
+            list-style: none;
+            margin:0;
+            padding: 25px 0 45px 0;
+            li{
+              float: left;
+              margin-right: 15px;
+              color: #BCBEC0;
+              font-size: 14px;
+
+              &:first-child{
+                border-right: 1px solid #BCBEC0;
+                padding-right: 15px;
+              }
+
+              a{
+                width: 16px;
+                height: 16px;
+                display: block;
+              }
+            }
+          }
+
+          h2{
+            font-family: "Lobster", cursive;
+            color: $brand-darkblue;
+            margin: 0;
+            font-size: 38px;
+          }
+
+          .change-pass{
+            color: #00948F;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(#00948F, 0.5);
+            padding-top: 20px;
+            margin-bottom: 15px;
+            display: inline-block;
+
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 400;
+
+            &:hover{
+              border-bottom: 1px dotted rgba(#00948F, 1);
+            }
+          }
+
+
+        }
+
+        .points-details{
+          padding-bottom: 20px;
+
+          ul{
+            list-style: none;
+            margin:0;
+            padding: 25px 0 25px 0;
+            li{
+              float: left;
+              margin-right: 15px;
+              color: #BCBEC0;
+              font-size: 14px;
+            }
+          }
+
+          h2{
+            font-family: "Lobster", cursive;
+            color: $brand-orange;
+            margin: 0;
+            font-size: 38px;
+          }
+
+          p{
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 400;
+            color: #6D6E71;
+            a{
+              color: #00948F;
+              text-decoration: none;
+              border-bottom: 1px dotted rgba(#00948F, 0.5);
+
+
+              &:hover{
+                border-bottom: 1px dotted rgba(#00948F, 1);
+              }
+            }
+          }
+
+          .bonus-detail{
+            float: left;
+            width: 100%;
+            margin-top: 15px;
+            .point{
+              width: 128px;
+              height: 128px;
+              float: left;
+              margin-right: 20px;
+            }
+            .multiplier{
+              font-family: "Lobster", cursive;
+              float: left;
+              font-size: 36px;
+              line-height: 128px;
+              margin-right: 20px;
+              color: $brand-orange;
+            }
+            .points{
+              font-family: "Lobster", cursive;
+              float: left;
+              font-size: 46px;
+              line-height: 128px;
+              color: $brand-darkblue;
+            }
+          }
+
+
+
+        }
+
+
+
+      }
+    }
+  }
+
+
+
+
+
+}
+
+/* Login page
+*/
+.dashboard-login-wrapper{
+  width: 100%;
+  height: 100%;
+  background: url("Yizhaku-pattern-brown-15%25.jpg") repeat 0 0;
+
+  padding-top: $padding-brand-top;
+  padding-bottom: $padding-brand-bottom;
+
+  #dashboard-login{
+    @include set_container;
+    max-width: 560px;
+    background: #ffffff;
+    .dashboard-row{
+      @include set_row;
+
+      .header-login{
+        @include set_grid;
+        @include set_grid_12;
+        width: 100%;
+        margin: 0;
+        padding: 10px 10px;
+        background: url("Yizhaku-pattern-blue-15%25.jpg") repeat 0 0;
+        h2{
+          margin: 0;
+          font-size: 32px;
+          text-align: center;
+          color: #ffffff;
+          font-family: "Lobster", cursive;
+        }
+      }
+      .body-login{
+        @include set_grid;
+        @include set_grid_12;
+        width: 100%;
+        margin: 0;
+        padding: 40px 30px;
+        form{
+          display: block;
+          .form-inputs{
+            .input{
+              width: 100%;
+              margin-bottom: 20px;
+              label{
+                @include fira;
+                color: $brand-orange;
+                font-size: 14px;
+                margin-left: 8px;
+              }
+              input{
+                color: $brand-darkblue;
+                @include fira;
+                font-style: italic;
+                width: inherit;
+                padding: 8px 12px;
+                border: 1px solid rgba(#bdbec0, 1);
+
+                -webkit-transition: border 1s cubic-bezier(.55,0,.1,1);
+                -moz-transition: border 1s cubic-bezier(.55,0,.1,1);
+                -ms-transition: border 1s cubic-bezier(.55,0,.1,1);
+                -o-transition: border 1s cubic-bezier(.55,0,.1,1);
+                transition: border 1s cubic-bezier(.55,0,.1,1);
+
+                ::-webkit-input-placeholder { /* WebKit browsers */
+                  color: #bdbec0;
+                }
+                :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                  color: #bdbec0;
+                  opacity:  1;
+                }
+                ::-moz-placeholder { /* Mozilla Firefox 19+ */
+                  color: #bdbec0;
+                  opacity:  1;
+                }
+                :-ms-input-placeholder { /* Internet Explorer 10+ */
+                  color: #bdbec0;
+                }
+
+                &:focus{
+                  border: 1px solid $brand-green;
+                }
+              }
+            }
+          }
+        }
+      }
+      .links-login{
+        margin: 10px 0;
+        .facebook{
+          float: left;
+          width: 45%;
+          margin-right: 2.5%;
+          a{
+            color: #bdbec0;
+            font-size: 14px;
+
+            svg{
+              width: 24px;
+              height: 24px;
+              display: inline;
+            }
+          }
+        }
+        .password-forget,
+        .new-user{
+          float: left;
+          width: 25%;
+          a{
+            color: $brand-green;
+            border-bottom: 1px dotted rgba($brand-green, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+            &:hover{
+              border-bottom: 1px dotted rgba($brand-green, 1);
+            }
+          }
+        }
+      }
+      .footer-login{
+        @include set_grid;
+        @include set_grid_12;
+        width: 100%;
+        margin: 0;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        background: $brand-orange;
+        a{
+          @include fira;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: #ffffff;
+          font-size: 30px;
+          display: block;
+          width: inherit;
+          &:hover{
+            color: #ffffff;
+          }
+          &:active{
+            color: #ffffff;
+          }
+        }
+      }
+
+
+    }
+  }
+}
+
+

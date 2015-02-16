@@ -1,0 +1,42 @@
+.header-wrap
+  .row
+    .columns.large-2.medium-2.small-5
+      .logo-wrap
+        .logo-inner
+          a href=golovna_path
+            = image_tag ("Yizhaku-logo.png")
+    .columns.large-2.large-offset-2.medium-offset-2.hide-for-small-only
+      .time-working-wrap
+        .time-working-inner
+          b
+            |12:
+            sup
+              |00
+            | - 22:
+            sup
+              |00
+          p Клуб доставки Їжі
+    .columns.large-3.large-offset-2.hide-for-small-only
+      .call-order-wrap
+        .call-order-inner
+          b
+            a +38 (097) 097-05-05
+          .clearfix
+          a.fancy_form href="#call-order" data-fancybox-group="call-order" rel="call-order"  замовити дзвінок
+    .columns.small-1.show-for-small-only
+
+    .columns.large-2.large-offset-1.small-5
+      .basket-part-wrap
+        .login-wrap
+          .login-inner
+            = embedded_svg ("user-icon.svg")
+        .basket-wrap
+          .basket-inner
+            .basket
+              .animate-basket
+                = embedded_svg ("cart.svg")
+            .count-wrap
+              p
+                |(
+                span 4
+                |)

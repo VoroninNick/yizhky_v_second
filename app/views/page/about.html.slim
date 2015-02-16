@@ -1,0 +1,49 @@
+.row
+  .columns.large-offset-2
+    ul.breadcrumbs
+      li.has-drop
+        a =@current_restorant.name
+        - if @restaurants && @restaurants.count > 0
+        ul.breadcrumbs-drop
+          - @restaurants.each do |r|
+            li
+              a =r.name
+-color_class = ''
+-if @current_restorant.slug == 'bruno'
+  -color_class = 'brown'
+-if @current_restorant.slug == 'barbarus'
+  -color_class = 'yellow-green'
+-if @current_restorant.slug == 'baba-franya'
+  -color_class = 'blue'
+
+.about-restaurant-wrap class="#{color_class}"
+  .row
+    .columns.large-8.medium-8
+      =image_tag @current_restorant.main_image.url(:large)
+      h2 = @current_restorant.name
+      =raw @current_restorant.content
+    .columns.large-4.medium-4
+      aside
+        .row
+          .columns
+            a href=restaurant_all_menu_path(@current_restorant.slug)
+              .restaurant-logo.box-shadow-restourant
+                =image_tag @current_restorant.logo
+        .row
+          .columns
+            .link-to-catalog-wrap
+              a.link-to-catalog href=restaurant_all_menu_path(@current_restorant.slug) Переглянути меню
+        .row
+          .columns
+            h4 Адреса:
+            p = @current_restorant.address
+        .row
+          .columns
+            h4 Телефон:
+            p =@current_restorant.phone_number
+        - unless @current_restorant.time_of_work.blank?
+          .row
+            .columns
+              h4 Графік роботи:
+
+

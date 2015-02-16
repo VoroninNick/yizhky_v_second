@@ -1,0 +1,262 @@
+$brand-orange: #FF661B;
+$brand-darkblue: #212844;
+$brand-green: #00948F;
+$brand-yellow: #FF9E15;
+$brand-error: #EC0044;
+
+$padding-brand-top: 80px;
+$padding-brand-bottom: 280px;
+
+
+$brand-barbaris: #BBB21E;
+$brand-baba: #00948F;
+$brand-bruno: #6B3F22;
+
+#barbarus-restoran{
+  #restoran-row{
+    .restoran-menu{
+      ul{
+        border: 1px solid $brand-barbaris !important;
+        button{
+          border-bottom: 1px solid $brand-barbaris !important;
+          //button{
+          color: $brand-barbaris !important;
+          //}
+        }
+      }
+    }
+    .restoran-products{
+      .wrapp-me{
+        background: $brand-barbaris !important;
+        .descr{
+          background: $brand-barbaris !important;
+        }
+      }
+    }
+  }
+}
+#bruno-restoran{
+  #restoran-row{
+    .restoran-menu{
+      ul{
+        border: 1px solid $brand-bruno !important;
+        button{
+          border-bottom: 1px solid $brand-bruno !important;
+          //button{
+          color: $brand-bruno !important;
+          //}
+        }
+      }
+    }
+    .restoran-products{
+      .wrapp-me{
+        background: $brand-bruno !important;
+        .descr{
+          background: $brand-bruno !important;
+        }
+      }
+    }
+  }
+}
+#baba-franya-restoran{
+  #restoran-row{
+    .restoran-menu{
+      ul{
+        border: 1px solid $brand-baba !important;
+        button{
+          border-bottom: 1px solid $brand-baba !important;
+          //button{
+          color: $brand-baba !important;
+          //}
+        }
+      }
+    }
+    .restoran-products{
+      .wrapp-me{
+        background: $brand-baba !important;
+        .descr{
+          background: $brand-baba !important;
+        }
+      }
+    }
+  }
+}
+
+
+@mixin brand-borders-h($border-color){
+
+  &:after,
+  &:before{
+    -webkit-transition: width 300ms ease-in-out;
+    -moz-transition: width 300ms ease-in-out;
+    -o-transition: width 300ms ease-in-out;
+    transition: width 300ms ease-in-out;
+    border-top: 1px solid $border-color;
+    content: "";
+    position: absolute;
+    height: 1px;
+  }
+
+  &:after{
+    top: 20px;
+    width: 40%;
+    right: 0;
+    @media (min-width: 320px) {
+      width: 0;
+    }
+    @media (min-width: 320px) and (max-width: 720px) {
+      width: 10%;
+    }
+    @media (min-width: 720px) and (max-width: 940px) {
+      width: 15%;
+    }
+    @media (min-width: 940px) and (max-width: 1290px) {
+      width: 25%;
+    }
+    @media (min-width: 1290px) and (max-width: 1620px) {
+      width: 30%;
+    }
+    @media (min-width: 1620px) and (max-width: 2560px) {
+      width: 40%;
+    }
+  }
+
+  &:before{
+    top: 20px;
+    width: 40%;
+    left: 0;
+    @media (min-width: 320px) {
+      width: 0;
+    }
+    @media (min-width: 320px) and (max-width: 720px) {
+      width: 10%;
+    }
+    @media (min-width: 720px) and (max-width: 940px) {
+      width: 15%;
+    }
+    @media (min-width: 940px) and (max-width: 1290px) {
+      width: 25%;
+    }
+    @media (min-width: 1290px) and (max-width: 1620px) {
+      width: 30%;
+    }
+    @media (min-width: 1620px) and (max-width: 2560px) {
+      width: 40%;
+    }
+  }
+
+
+}
+
+
+@mixin fira(){
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+}
+
+
+html{
+
+  body{
+    transition: opacity ease-in 0.2s;
+
+    -webkit-font-smoothing: antialiased;
+
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+
+  }
+
+
+  input, textarea{
+    border-radius: 2px;
+  }
+
+
+}
+
+
+/*
+ Sticky footer
+ */
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+#magic-wrapper {
+  min-height: 100%;
+  margin-bottom: -490px;
+  @media (max-width: 320px) {
+    margin-bottom: -1090px;
+  }
+  @media (min-width: 320px) and (max-width: 380px){
+    margin-bottom: -1090px;
+  }
+  @media (min-width: 380px) and (max-width: 480px){
+    margin-bottom: -1020px;
+  }
+  @media (min-width: 480px) and (max-width: 594px){
+    margin-bottom: -960px;
+  }
+  @media (min-width: 594px) and (max-width: 780px) {
+    margin-bottom: -880px;
+  }
+  @media (min-width: 780px) and (max-width: 870px) {
+    margin-bottom: -840px;
+  }
+  @media (min-width: 870px) and (max-width: 940px) {
+    margin-bottom: -590px;
+  }
+  @media (min-width: 940px) and (max-width: 1170px) {
+    margin-bottom: -560px;
+  }
+  @media (min-width: 1170px) and (max-width: 1368px) {
+    margin-bottom: -540px;
+  }
+  @media (min-width: 1368px) and (max-width: 1540px) {
+    margin-bottom: -510px;
+  }
+}
+#magic-wrapper:after {
+  content: "";
+  display: block;
+}
+footer, #magic-wrapper:after {
+  height: 490px;
+  @media (max-width: 320px) {
+    height: 1090px;
+  }
+  @media (min-width: 320px) and (max-width: 380px){
+    height: 1090px;
+  }
+  @media (min-width: 380px) and (max-width: 480px){
+    height: 1020px;
+  }
+  @media (min-width: 480px) and (max-width: 594px){
+    height: 960px;
+  }
+  @media (min-width: 594px) and (max-width: 780px) {
+    height: 880px;
+  }
+  @media (min-width: 780px) and (max-width: 872px) {
+    height: 840px;
+  }
+  @media (min-width: 872px) and (max-width: 940px) {
+    height: 590px;
+  }
+  @media (min-width: 940px) and (max-width: 1170px) {
+    height: 560px;
+  }
+  @media (min-width: 1170px) and (max-width: 1368px) {
+    height: 540px;
+  }
+  @media (min-width: 1368px) and (max-width: 1540px) {
+    height: 510px;
+  }
+}
+footer {
+  background: url("Yizhaku-pattern-blue-15%25.jpg") repeat 0 0;
+}
+
