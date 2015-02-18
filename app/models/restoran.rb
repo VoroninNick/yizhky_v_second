@@ -31,7 +31,7 @@ class Restoran < ActiveRecord::Base
   validates :name, presence: true
   validates :slug, presence: true, uniqueness: true
 
-  default_scope { order('created_at DESC') }
+  # default_scope { order('created_at DESC') }
 
   def to_param
     slug
@@ -41,4 +41,11 @@ class Restoran < ActiveRecord::Base
     self.slug = name.parameterize
   end
 
+  before_save :set_position
+
+  protected
+
+  def set_position
+    self.position ||= 1 + (Restoran.where('id=?',id).maximum(:position) || 0)
+  end
 end

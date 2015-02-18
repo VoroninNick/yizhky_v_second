@@ -8,6 +8,7 @@
   <%= f.input :description, label: "Опис", input_html: {placeholder: 'морква, бульба, цибуля'}, hint: "Компоненти страви" %>
   <%= f.input :point, label: "Бали", input_html: {placeholder: '10'}, hint: "Бали за 1 куплену одиницю товару" %>
   <%= f.association :category, :label_method => lambda { |category| "#{category.restoran.name} > #{category.name}" } %>
+  <%= f.association :index_banner, label: 'Головний банер' %>
   <%= f.submit "Зберегти", class: 'submit-btn' %>
 <% end %>
 <script type="text/javascript" charset="utf-8">

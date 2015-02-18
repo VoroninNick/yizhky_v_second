@@ -53,6 +53,10 @@ module ApplicationHelper
    embedded_svg_from_abs(Rails.root.join( filename), options)
   end
 
+  def embedded_svg_from_public filename, options ={}
+    embedded_svg_from_root_directory("public#{filename}", options)
+  end
+
   def self.embedded_svg_js filename, options={}
    file = File.read(Rails.root.join('app', 'assets', 'images', 'svg', filename))
    doc = Nokogiri::HTML::DocumentFragment.parse file
@@ -71,9 +75,9 @@ module ApplicationHelper
     end
   end
   def restorans
-     restoran = Restoran.order(created_at: :asc)
+     restoran = Restoran.order(position: :asc)
   end
-  # def index_banner
-  #   products = Product
-  # end
+  def index_banner
+    index_banner = IndexBanner.first()
+  end
 end

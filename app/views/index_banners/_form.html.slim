@@ -1,0 +1,19 @@
+= form_for @index_banner do |f|
+  - if @index_banner.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@index_banner.errors.count, "error")} prohibited this index_banner from being saved:"
+      ul
+        - @index_banner.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :position
+    = f.number_field :position
+  .field
+    = f.label :published
+    = f.check_box :published
+
+  .actions = f.submit

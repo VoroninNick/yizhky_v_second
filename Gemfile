@@ -30,7 +30,7 @@ gem 'progress_bar'
 gem 'sunspot_rails'
 gem 'simple_form'
 gem "selectize-rails"
-gem 'better_errors'
+# gem 'better_errors'
 gem 'binding_of_caller'
 gem 'devise'
 gem 'paper_trail', require: false
@@ -59,7 +59,7 @@ gem 'foundation-rails'
 gem 'owlcarousel-rails'
 gem 'jquery-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
-# gem 'mixitup_rails'
+gem 'mixitup_rails'
 
 gem 'squeel'
 

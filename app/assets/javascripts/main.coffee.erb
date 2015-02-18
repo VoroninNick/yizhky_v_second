@@ -15,6 +15,23 @@ MyTabs = ($this, container, tabHeader, tabBody) ->
 #  $body_tabs_li.eq(current_position).addClass('active').removeClass('hide')
 
 $(document).ready ->
+  $('.filters_container').mixItUp
+    load:
+      filter: '.all'
+# 		  filter: '.13-bezalkoholni-napoi'
+#    controls:
+#      toggleFilterButtons: true
+  $('ul.catalog-sidebar li').click ->
+    $('ul.catalog-sidebar li').removeClass('active-all')
+#  // or directly on the modal
+#  $('#BasketModal').foundation('reveal', 'open')
+#  $('a.reveal-link').trigger('click')
+#  $('#myModal').foundation('reveal', 'close')
+#  $('#myModal').foundation 'reveal', 'open',
+#    animation: 'none'
+#    animationspeed: 0
+#    closeonbackgroundclick: true
+#    dismissmodalclass: 'close-reveal-modal'
 
 
   owl_banner = $("ul#index-products-banner")
@@ -99,5 +116,7 @@ $(document).ready ->
   $("a.close-fancy-form").click (e) ->
     e.preventDefault()
     $.fancybox.close()
+
+
 
 

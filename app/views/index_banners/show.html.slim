@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @index_banner.name
+p
+  strong Position:
+  = @index_banner.position
+p
+  strong Published:
+  = @index_banner.published
+
+= link_to 'Edit', edit_index_banner_path(@index_banner)
+'|
+= link_to 'Back', index_banners_path

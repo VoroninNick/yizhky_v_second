@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :index_banners
+
   mount Ckeditor::Engine => '/ckeditor'
 
   # Section for user dashboard START
@@ -97,7 +99,7 @@ Rails.application.routes.draw do
   # get '/golovna' => 'page#golovna'
   # get '/restaurant/:url'
   get '/:url' => 'page#about', as: 'restaurant_about'
-  get '/:restaurant/all-menu' => 'page#catalog', as: 'restaurant_all_menu'
+  get '/:restaurant/menu' => 'page#catalog', as: 'restaurant_all_menu'
   get '/:restaurant/:catalog' => 'page#catalog', as: 'restaurant_catalog'
 
   root 'page#golovna'

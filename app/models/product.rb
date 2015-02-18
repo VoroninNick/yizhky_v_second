@@ -5,6 +5,9 @@ class Product < ActiveRecord::Base
 
   attr_accessible :name, :slug, :price, :description, :point, :avatar, :category, :category_id, :category_attributes, :unit
 
+  attr_accessible :index_banner, :index_banner_id
+  belongs_to :index_banner
+
   has_and_belongs_to_many :orders, join_table: 'product_orders'
   belongs_to :category
 

@@ -1,0 +1,25 @@
+h1 Listing index_banners
+
+table
+  thead
+    tr
+      th Name
+      th Position
+      th Published
+      th
+      th
+      th
+
+  tbody
+    - @index_banners.each do |index_banner|
+      tr
+        td = index_banner.name
+        td = index_banner.position
+        td = index_banner.published
+        td = link_to 'Show', index_banner
+        td = link_to 'Edit', edit_index_banner_path(index_banner)
+        td = link_to 'Destroy', index_banner, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Index banner', new_index_banner_path

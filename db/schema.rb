@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216161029) do
+ActiveRecord::Schema.define(version: 20150217092203) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 20150216161029) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+
+  create_table "index_banners", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "merit_actions", force: true do |t|
     t.integer  "user_id"
@@ -126,6 +134,7 @@ ActiveRecord::Schema.define(version: 20150216161029) do
     t.datetime "avatar_updated_at"
     t.integer  "category_id"
     t.string   "unit"
+    t.integer  "index_banner_id"
   end
 
   add_index "products", ["slug"], name: "index_products_on_slug"

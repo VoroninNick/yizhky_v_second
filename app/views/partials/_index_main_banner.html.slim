@@ -1,5 +1,6 @@
 .index-main-banner-wrap.blue-background-pattern
   .index-main-banner
+    - banner = index_banner
     - restorans = Restoran.order(created_at: :asc)
     ul#index-products-banner
       - restorans.each do |r|
@@ -12,26 +13,26 @@
         -elsif r.slug == 'bruno'
           - restoran_color = 'brown'
 
-        - r.categories.each do |c|
-          -c.products.each_with_index  do |p, i|
-            - if i < 1
-              li
-                .one-product-wrap class="#{restoran_color}"
-                  .bi style="background: url('#{p.avatar.url(:main_big)}')no-repeat center center;"
-                  .information-block-wrap
-                    .price-wrap.text-center
-                      .price
-                        strong = p.price.round
-                        p грн
-                    .information-block
-                      .name-wrap
-                        h2 =p.name
-                      .description-wrap
-                        p =p.description
-                      form action=""
-                        .input
-                          input type="number" value="1"
-                        button type="submit" name="order-product" value="true" Замовити
+        /- r.categories.each do |c|
+        -banner.products.each_with_index  do |p, i|
+          - if i < 1
+            li
+              .one-product-wrap class="#{restoran_color}"
+                .bi style="background: url('#{p.avatar.url(:main_big)}')no-repeat center center;"
+                .information-block-wrap
+                  .price-wrap.text-center
+                    .price
+                      strong = p.price.round
+                      p грн
+                  .information-block
+                    .name-wrap
+                      h2 =p.name
+                    .description-wrap
+                      p =p.description
+                    form action=""
+                      .input
+                        input type="number" value="1"
+                      button type="submit" name="order-product" value="true" Замовити
 
     /- banner = products(5)
     /- if banner

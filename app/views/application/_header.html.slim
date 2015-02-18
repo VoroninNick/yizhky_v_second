@@ -31,12 +31,14 @@
           .login-inner
             = embedded_svg ("user-icon.svg")
         .basket-wrap
-          .basket-inner
-            .basket
-              .animate-basket
-                = embedded_svg ("cart.svg")
-            .count-wrap
-              p
-                |(
-                span 4
-                |)
+          a data-reveal-id="BasketModal" href="#"
+            .basket-inner
+              .basket
+                .animate-basket
+                  = embedded_svg ("cart.svg")
+              .count-wrap
+                p
+                  |(
+                  span 4
+                  |)
+=render partial: 'partials/basket'
