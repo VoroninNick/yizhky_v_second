@@ -1345,7 +1345,7 @@ p
               weight: 300
             color: #FF9E15
             line-height: rem-calc(21)
-    a
+    a, button
       display: inline-block
       width: 100%
       height: 100%
@@ -1357,6 +1357,12 @@ p
         size: rem-calc(24)
         weight: 500
       color: #fff
+    button
+      margin: 0
+      background: transparent
+      padding: 0
+      outline: none !important
+
 .checkout-status-wrap
   .basket-ico-status
     width: 26px
@@ -1395,6 +1401,7 @@ p
   border: none
 .reveal-modal-bg
   position: fixed
+  background: rgba(0, 0, 0, .5) !important
 a.close-reveal-modal
   height: 40px
   width: 40px
@@ -1451,7 +1458,70 @@ a.close-reveal-modal
       text-align: center
       border-radius: 50%
       border: 1px solid #FF9E15
+input, textarea
+  outline: none !important
+  box-shadow: none !important
+  background: transparent !important
+#CallOrderModal
+  max-width: 700px
+  textarea
+    min-height: 110px
+  form
+    padding-top: 45px
+    p
+      line-height: rem-calc(18)
+      font:
+        family: "Fira Sans", sans-serif
+        size: rem-calc(14)
+        weight: 300
+      color: #939598
+      padding: 10px 0 17px 0
+form
+  padding-top: 45px
+  .input
+    label
+      line-height: rem-calc(14)
+      font:
+        family: "Fira Sans", sans-serif
+        size: rem-calc(14)
+        weight: 300
+      color: #FF9E15
+      padding-left: 17px
+    input
+      +placeholder(#A7A9AC, rem-calc(14), $font_style: italic !important)
+        font-family: "Fira Sans", sans-serif
+        line-height: rem-calc(14)
+      height: 40px
+      font:
+        family: "Lobster", cursive
+        size: rem-calc(16)
+        weight: 300
+      color: #58595B
+      line-height: rem-calc(18)
+      padding: 0 17px
 
-
+      &:valid
+        border-color: #58595B
+      &:focus
+        border-color: #00948F
+        color: #00948F
+        font-size: rem-calc(16)
+    textarea
+      +placeholder(#A7A9AC, rem-calc(14), $font_style: italic !important)
+        font-family: "Fira Sans", sans-serif
+        line-height: rem-calc(14)
+        font-weight: 300
+      font:
+        family: "Lobster", cursive
+        size: rem-calc(16)
+        weight: 300
+      color: #58595B
+      line-height: rem-calc(18)
+      &:text
+        border-color: #58595B
+      &:focus
+        border-color: #00948F
+        color: #00948F
+        font-size: rem-calc(16)
 
 

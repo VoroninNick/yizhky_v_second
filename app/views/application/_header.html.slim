@@ -5,7 +5,7 @@
         .logo-inner
           a href=root_path
             = image_tag ("Yizhaku-logo.png")
-    .columns.large-2.large-offset-2.medium-offset-2.hide-for-small-only
+    .columns.large-2.large-offset-2.medium-3.medium-offset-2.hide-for-small-only
       .time-working-wrap
         .time-working-inner
           b
@@ -16,16 +16,17 @@
             sup
               |00
           p Клуб доставки Їжі
-    .columns.large-3.large-offset-2.hide-for-small-only
+    .columns.large-3.large-offset-2.medium-3.hide-for-small-only
       .call-order-wrap
         .call-order-inner
           b
             a +38 (097) 097-05-05
           .clearfix
-          a.fancy_form href="#call-order" data-fancybox-group="call-order" rel="call-order"  замовити дзвінок
+          a data-reveal-id="CallOrderModal" href="#" замовити дзвінок
+          /a.fancy_form href="#call-order" data-fancybox-group="call-order" rel="call-order"  замовити дзвінок
     .columns.small-1.show-for-small-only
 
-    .columns.large-2.large-offset-1.small-5
+    .columns.large-2.large-offset-1.medium-3.small-5
       .basket-part-wrap
         .login-wrap
           .login-inner
@@ -41,4 +42,5 @@
                   |(
                   span 4
                   |)
+=render partial: 'partials/forms/call_order'
 =render partial: 'partials/basket'

@@ -1,28 +1,60 @@
-div style="display: none;"
-  #call-order data-fancybox-group="call-order" rel="call-order"
-    .form-header.blue-background-pattern.text-center
-      h3 Замовити дзвінок
-      a.close-fancy-form
-    form
-      .row
-        input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"
-        .columns.large-6.medium-6
-          .input
-            label for="co-name"
-              |Ім'я
-            input#co-name type="text" name="name" placeholder="Володимир" required=""
-          .input
-            label for="co-email"
-              |Контактний телефон
-            input#co-email type="text" name="phone" placeholder="+38 (XXX) XXX XX XX" required=""
-          .input
-            label for="co-phone"
-              |Електронна скринька
-            input#co-phone type="email" name="email" placeholder="foodorder@test.com" required=""
-        .columns.large-6.medium-6
-          .input
-            label for="co-comment"
-              |Додаткові примітки
-            textarea#co-comment type="text" name="comment" placeholder="erhgedfgdsfgdf"
-      .input.input-send
-          button Чекаю дзвінка
+
+#CallOrderModal.reveal-modal data-reveal=""
+  .basket-modal-wrap
+    .modal-header.blue-background-pattern.text-center
+      h2 Замовити дзвінок
+      a.close-reveal-modal
+    form action="/" method="POST"
+      .modal-content
+        .row
+          input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"
+          .columns.large-6.medium-6
+            .input
+              label for="co-name"
+                |Ім'я*
+              input#co-name type="text" name="name" placeholder="Володимир" required=""
+            .input
+              label for="co-phone"
+                |Контактний телефон*
+              input#co-phone type="text" name="phone" placeholder="+38 (XXX) XXX XX XX" required=""
+          .columns.large-6.medium-6
+            .input
+              label for="co-comment"
+                |Додаткові примітки
+              textarea#co-comment type="text" name="comment" placeholder="erhgedfgdsfgdf"
+        .row
+          .columns
+            p * поля обов’язкові для заповнення
+      .modal-footer.text-center
+        button Чекаю дзвінка
+
+
+/
+/div style="display: none;"
+/  #call-order data-fancybox-group="call-order" rel="call-order"
+/    .form-header.blue-background-pattern.text-center
+/      h3 Замовити дзвінок
+/      a.close-fancy-form
+/    form
+/      .row
+/        input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"
+/        .columns.large-6.medium-6
+/          .input
+/            label for="co-name"
+/              |Ім'я
+/            input#co-name type="text" name="name" placeholder="Володимир" required=""
+/          .input
+/            label for="co-email"
+/              |Контактний телефон
+/            input#co-email type="text" name="phone" placeholder="+38 (XXX) XXX XX XX" required=""
+/          .input
+/            label for="co-phone"
+/              |Електронна скринька
+/            input#co-phone type="email" name="email" placeholder="foodorder@test.com" required=""
+/        .columns.large-6.medium-6
+/          .input
+/            label for="co-comment"
+/              |Додаткові примітки
+/            textarea#co-comment type="text" name="comment" placeholder="erhgedfgdsfgdf"
+/      .input.input-send
+/          button Чекаю дзвінка
