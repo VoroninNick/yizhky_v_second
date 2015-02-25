@@ -142,6 +142,7 @@
     bottom: 0
     position: absolute
     overflow: hidden
+    padding-top: 50px
   ul#index-products-banner
     height: 480px
     /*margin-top: 50px*/
@@ -154,6 +155,11 @@
         padding-bottom: 0
         height: 100%
         margin: 0
+        .information-block
+          .name-wrap
+            padding-left: 30px
+          .description-wrap
+            padding-left: 30px
         .bi
           height: 100%
           padding-bottom: 0
@@ -225,6 +231,7 @@
       margin: 0 auto
       margin-top: -40%
     .about-restaurant
+      padding-top: 15px
       b, p
         color: #fff
       b
@@ -237,6 +244,7 @@
           family: 'Fira Sans', sans-serif
           size: 0.75rem
         line-height: .6rem
+        padding-top: 5px
 .restaurant-logo
   background-color: #fff
   width: 70%
@@ -280,7 +288,7 @@
       display: block
       content: ''
       height: 1px
-      width: 1000px
+      width: 2000px
       background-color: #BCBEC0
       +my_vertical_align
         position: absolute
@@ -290,7 +298,7 @@
       display: block
       content: ''
       height: 1px
-      width: 1000px
+      width: 2000px
       background-color: #BCBEC0
       +my_vertical_align
         position: absolute
@@ -891,6 +899,7 @@ ul.catalog-sidebar
         height: 40px
         margin-top: 8px
         padding-left: 20px
+        background: #fff !important
     .input-sent
       width: 20%
       position: relative
@@ -1145,7 +1154,8 @@ p
 
 .mix
   display: none
-
+.login-window-wrap
+  padding: 85px 0 250px 0
 .basket-modal-wrap
   .modal-header
     height: 65px
@@ -1160,6 +1170,7 @@ p
       color: #fff
   .modal-content
     min-height: 100px
+    background: #fff
     ul
       li
         width: 28.5%
@@ -1399,6 +1410,7 @@ p
 .reveal-modal
   padding: 0
   border: none
+  max-width: 700px
 .reveal-modal-bg
   position: fixed
   background: rgba(0, 0, 0, .5) !important
@@ -1409,9 +1421,16 @@ a.close-reveal-modal
   background: url('<%=asset_path("Yizhaku-close-button.png")%>') no-repeat
   background-size: 100%
   top: -1.2rem !important
-
-.test-div
-  height: 100px
+a.blue-link
+  color: #00948F
+  line-height: rem-calc(24)
+  font:
+    family: "Fira Sans", sans-serif
+    size: rem-calc(14)
+    weight: 300
+.round-input
+  width: 40px
+  float: left
   .input.input-count
     width: 40px
     height: 40px
@@ -1462,8 +1481,13 @@ input, textarea
   outline: none !important
   box-shadow: none !important
   background: transparent !important
+
+#BasketSecondStepModal
+  textarea
+    min-height: 180px
+
+
 #CallOrderModal
-  max-width: 700px
   textarea
     min-height: 110px
   form
@@ -1524,4 +1548,79 @@ form
         color: #00948F
         font-size: rem-calc(16)
 
+.bx-viewport
+  height: 430px
+  -moz-box-shadow: none !important
+  -webkit-box-shadow: none !important
+  box-shadow: none !important
+  border: none !important
+  ul#index-products-banner
+    height: inherit
+    li
+      height: 100%
+      .information-block-wrap
+        height: 113px !important
+        .information-block
+          height: 100%
 
+.bx-default-pager
+  a
+    background: #FF9E15 !important
+    width: 15px !important
+    height: 15px !important
+    margin: 0 20px !important
+    -moz-border-radius: 50% !important
+    -webkit-border-radius: 50% !important
+    border-radius: 50% !important
+    &.active
+      background: #BBB21E !important
+      width: 20px !important
+      height: 20px !important
+      position: relative
+      top: -2.5px
+.bx-pager
+  bottom: -40px !important
+
+.brown-pattern-background
+  background: url('<%=asset_path("Yizhaku-pattern-brown-15.jpg")%>')
+.dashboards-wrap
+  padding-bottom: 65px
+  ul.breadcrumbs
+    li
+      a
+        color: #fff
+  ul.dashboard-sidebar
+    background: #fff
+    li
+      height: 50px
+      border-bottom: 1px solid #FF661B
+      &:last-of-type
+        border-bottom: none
+      &:hover
+        background: #FF661B
+        a
+          color: #fff
+      a
+        padding-left: 20px
+        padding-left: 20px
+        line-height: 50px
+        padding: 0 0 0 20px
+        display: inline-block
+        width: 100%
+        color: #FF661B
+        font:
+          family: "Lobster", cursive
+          size: rem-calc(18)
+          weight: 300
+  .dashboard-content-wrap
+    background: #fff
+  li.edit-user-ico
+    svg
+      width: 20px
+
+/*.naz-test*/
+//  @include grid-row()
+  /*h2*/
+//    @include grid-column(8)
+  /*a*/
+//    @include grid-column(4)

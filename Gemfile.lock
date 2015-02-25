@@ -37,6 +37,7 @@ GEM
     breadcrumbs_on_rails (2.3.0)
     browser (0.8.0)
     builder (3.2.2)
+    bxslider-rails (4.1.0)
     capistrano (3.3.5)
       capistrano-stats (~> 1.1.0)
       i18n
@@ -289,6 +290,7 @@ DEPENDENCIES
   binding_of_caller
   breadcrumbs_on_rails
   browser
+  bxslider-rails
   capistrano
   ckeditor
   coffee-rails (~> 4.0.0)

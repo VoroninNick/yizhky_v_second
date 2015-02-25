@@ -63,3 +63,5 @@ gem 'mixitup_rails'
 
 gem 'squeel'
 
+gem 'bxslider-rails'
+

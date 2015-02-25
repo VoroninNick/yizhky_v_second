@@ -1,0 +1,52 @@
+.login-window-wrap.brown-pattern-background
+  .row
+    .columns.large-8.large-centered
+      .basket-modal-wrap
+        .modal-header.blue-background-pattern.text-center
+          h2 Вхід в особистий кабінет
+        .modal-content
+          .row
+            .columns
+              section.dashboard-login-wrapper
+                section#dashboard-login
+                  .dashboard-row
+                    .body-login
+                      = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { autocomplete: 'off' }) do |f|
+                        .form-inputs
+                          = f.input :email, required: false, :autocomplete => 'off', label: "Електронна пошта", placeholder: 'nazariy.papizh@gmail.com'
+                          = f.input :password, required: false, :autocomplete => 'off', label: "Пароль", placeholder: 'password'
+                          /<%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+                        /<%#= f.button :submit, "Sign in" %>
+
+                      .links-login
+                        .facebook
+                          - resource_class.omniauth_providers.each do |provider|
+                            = link_to "Або, увійдіть через соціальну мережу", omniauth_authorize_path(resource_name, provider)
+                        .password-forget
+                          = link_to "Забули пароль?", new_password_path(resource_name)
+                        .new-user
+                          = link_to "Новий користувач", new_registration_path(resource_name)
+                        /<%#= render "devise/shared/links" %>
+                    .footer-login
+
+
+          javascript:
+            document.getElementById('user_password').onkeydown = function(e){
+              if(e.keyCode == 13){
+                $("#new_user").submit();
+              }
+            };
+            $(document).ready(function(){
+              $("#submit-me").click(function(submit_me){
+                submit_me.preventDefault();
+                $("#new_user").submit();
+              });
+            });
+
+        .modal-footer.text-center
+          a href="" id="submit-me" Увійти
+
+
+
+

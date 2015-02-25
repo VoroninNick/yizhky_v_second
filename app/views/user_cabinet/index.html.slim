@@ -1,0 +1,85 @@
+.dashboards-wrap.brown-pattern-background
+  .breadcrumbs-wrap
+    .row
+      .columns.large-offset-2
+        ul.breadcrumbs
+          li
+            a Особистий кабінет
+
+  .row
+    .columns.large-3
+      = render partial: 'partials/user_cabinet/side_menu'
+    .columns.large-9
+      .dashboard-content-wrap
+        .columns
+          article.intro
+            h1
+              |Вітаємо,
+              = current_user.first_name
+              = current_user.last_name
+              |!
+            p Ви знаходитесь в особистому кабінеті. Тут ви маєте змогу редагувати особисті дані, переглядати історію покупок, та підписатись (відписатись) на розсилку
+            = link_to 'Вийти', destroy_user_session_path, :method => :delete
+
+          article.contact-details
+            ul
+              li Контактна інформація
+              li.edit-user-ico
+                = link_to(embedded_svg("user-edit-pen.svg"), edit_user_registration_path)
+            h2
+              = current_user.first_name
+              = current_user.last_name
+            h2
+              = current_user.email
+            = link_to 'Змінити пароль', edit_user_registration_path, class: 'change-pass'
+        .clearfix
+
+/= link_to 'Sign out', destroy_user_session_path, :method => :delete
+//<%#= current_user.add_points(20) %>
+/
+/section#dashboard
+/  #dashboard-container
+/    #dashboard-row
+/
+/      #dashboard-navigation
+/        = render partial: 'partials/user_cabinet/side_menu'
+/
+/      section#dashboard-user-profile
+/        article.intro
+/          h1
+/            |Вітаємо,
+/            = current_user.first_name
+/            = current_user.last_name
+/            |!
+/          p Ви знаходитесь в особистому кабінеті. Тут ви маєте змогу редагувати особисті дані, переглядати історію покупок, та підписатись (відписатись) на розсилку
+/          = link_to 'Вийти', destroy_user_session_path, :method => :delete
+/
+/        article.contact-details
+/          ul
+/            li Контактна інформація
+/            li
+/              = link_to(embedded_svg("user-edit-pen.svg"), edit_user_registration_path)
+/          h2
+/            = current_user.first_name
+/            = current_user.last_name
+/          h2
+/            = current_user.email
+/          = link_to 'Змінити пароль', edit_user_registration_path, class: 'change-pass'
+
+        /article.points-details
+        /  ul
+        /    li Бонусні бали
+        /
+        /  p Бали нараховуються після кожної покупки, і можуть витрачатись при наступних покупках.
+        /    a href="" Детальніше про систему балів
+        /  h2 Балів на вашому рахунку:
+        /  .bonus-detail
+        /    .point
+        /      = embedded_svg("point.svg")
+        /
+        /    .multiplier
+        /      x
+        /
+        /    .points
+        /      = current_user.points
+

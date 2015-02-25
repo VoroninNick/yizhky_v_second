@@ -18,6 +18,8 @@
 //= require ckeditor/init
 //= require owl.carousel
 //= require mixitup
+//= require bxslider
+
 //= require_tree .
 
 

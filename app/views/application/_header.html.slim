@@ -30,7 +30,8 @@
       .basket-part-wrap
         .login-wrap
           .login-inner
-            = embedded_svg ("user-icon.svg")
+            a href=user_cabinet_index_path
+              = embedded_svg ("user-icon.svg")
         .basket-wrap
           a data-reveal-id="BasketModal" href="#"
             .basket-inner
@@ -43,4 +44,5 @@
                   span 4
                   |)
 =render partial: 'partials/forms/call_order'
+=render partial: 'partials/forms/basket_second_step'
 =render partial: 'partials/basket'
